@@ -1,0 +1,314 @@
+/* Thoughts */
+/* 1)Look into browser compatability for counter */
+/* 2)Reseach more about naming conventions */
+
+/* General */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+}
+
+.container {
+    padding: 0 1em;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+/* Ingredients */
+.ingredients-section {
+    margin-bottom: 2.4rem;
+}
+
+.ingredients-title {
+    margin-bottom: 1.3rem;
+}
+
+.ingredients-section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-top: 3.2rem;
+    margin-bottom: 2.3rem;
+}
+
+.ingredients-item {
+    margin-bottom: 1rem;
+}
+
+.ingredients-item label {
+    display: flex;
+}
+
+.ingredients-item input[type='checkbox'] {
+    color: #333333;
+    height: 21px;
+    margin-right: 0.8rem;
+    min-width: 21px;
+}
+
+.ingredients-suggestions {
+    font-style: italic;
+}
+
+/* Instructions */
+.instructions-title {
+    margin-bottom: 3.2rem;
+}
+  
+.instructions-list {
+    list-style: none;
+    counter-reset: li;
+    font-size: 1.1em;
+}
+
+.instructions-step {
+    counter-increment: li;
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 2.5rem;
+    
+}
+
+.instructions-step::before {
+    background-color: #f2994a;
+    color: #fff;
+    content: counter(li);
+    border-radius: 6px;
+    min-width: 36px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7em;
+    margin-right: 1.5rem;
+    padding-top: 0; 
+    padding-bottom: 0.29em;
+}
+    
+/* Recipes */
+.recipe-header {
+    font-weight: 500;
+    margin: 1.5rem 0 2.4rem 0;
+}
+  
+.recipe-header-title {
+    color: #000;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+  
+.recipe-header-description::before {
+    content: url(./6dots.svg);
+    margin-right: 17px;
+}
+
+.recipe-header-description {
+    color: #4f4f4f;
+    display: flex;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-bottom: 2.4rem;
+}
+  
+.recipe-header-image {
+    border-radius: 12px;
+}
+
+.recipe {
+    position: relative;
+} 
+/* Servings and Time  */
+
+.servings-and-time-list {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.servings-and-time-item {
+    color: #bdbdbd;  
+    align-items: center;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.time-body-text {
+    color: #333;
+}
+  
+.servings-and-time-icon {
+    color: #333;
+    font-size: 1.28em;
+    margin-right: 0.7rem;
+}
+
+.orange-text {
+    color: #F2994A;
+}
+  
+.servings-and-time-text p:first-child {
+    font-size: 0.71em;
+}
+     
+/* Footer */
+.recipe-source {
+    color: #bdbdbd;
+    font-size: 0.85em;
+    font-style: italic;
+}
+  
+.recipe-source a {
+    color: #bdbdbd;
+    text-decoration: none;
+}
+
+.recipe-source a:hover {
+    color:  #f2994a;
+}
+
+.page-footer {
+    color: #a9a9a9;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    margin: 15.5rem 0 2.1rem 0;
+}
+   
+/* Medi Queries */
+@media only screen and (min-width: 600px) {
+    .recipe-header-description {
+        max-width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Ingredients */
+    .ingredients-section {
+        width: 66%;
+    }
+
+    .ingredients-title {
+        font-size: 1.5em;
+        margin-bottom: 2.6rem;
+    }
+
+    .ingredients-section-header {
+        font-size: 1.2;
+        margin-bottom: 2.6rem;
+    }
+
+    .ingredients-item {
+        font-size: 1.1;
+        margin-bottom: 1.2rem;
+    }
+
+    /* Instructions */
+    .instructions {
+        width: 66%;
+    }
+
+    .instructions-title {
+        font-size: 1.5em;
+        margin-bottom: 2.6rem;
+    }   
+    /* Recipe Header */
+    .recipe-header {
+        margin: 3rem 0 3.6rem 0;
+    }
+
+    .recipe-header-title {
+        font-size: 2.5em;
+    }
+
+    .recipe-header-description {
+        font-size: 1em;
+        max-width: 82%;
+    }
+
+    /* Recipe time and Servings */
+    .time-and-servings-section {
+        border-radius: 12px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
+        padding: 4em;
+        position: absolute;
+        right: 0;
+    }
+    .servings-and-time-list {
+        display: block;
+    }
+    .servings-and-time-icon {
+        font-size: 1.71em;
+    }
+
+    /* Recipe Source */
+    .recipe-source {
+        font-size: 1.14em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* Ingredients */
+    .ingredients {
+        width: 55%;
+    }
+
+    .ingredients-title {
+        font-size: 1.7;
+        margin-bottom: 3rem;
+    }
+
+    /* Instructions */
+    .instructions {
+        width: 55%;
+    }
+
+    .instructions-title {
+        font-size: 1.7em;
+        margin-bottom: 3rem;
+    }
+    /* Recipe Heaader */
+    .recipe-header {
+        margin: 5.2rem 0 4.8rem 0;
+    }
+
+    .recipe-header-title {
+        font-size: 3.42em;
+    }
+
+    .recipe-header-description {
+        margin-bottom: 3.6rem;
+        max-width: 66%;
+    }
+}
